@@ -1,0 +1,25 @@
+{
+  "sources" : [
+    {
+      "image" : "background.png",
+      "tiles" : {
+        "bk01" : { "x" : 0, "y" : 0 },
+        "bk02" : { "x" : 3, "y" : 1 },
+        "bk03" : { "x" : 3, "y" : 2 },
+        
+        "bk_brick_tl" : { "x" : 0, "y" : 1 },
+        "bk_brick_tc" : { "x" : 1, "y" : 1 },
+        "bk_brick_tr" : { "x" : 2, "y" : 1 },
+        
+        "bk_brick_ml" : { "x" : 0, "y" : 2 },
+        "bk_brick_mr" : { "x" : 2, "y" : 2 },
+        
+        "bk_brick_bl" : { "x" : 0, "y" : 3 },
+        "bk_brick_bc" : { "x" : 1, "y" : 3 },
+        "bk_brick_br" : { "x" : 2, "y" : 3 },
+        
+        "bk_snake" : { "x" : 3, "y" : 3 }
+      }
+    }
+  ]
+}

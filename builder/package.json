@@ -1,0 +1,8 @@
+{
+  "name" : "gbbuilder",
+  "version": "1.0.0",
+  "dependencies" : {
+    "os-homedir" : "1.0.1",
+    "pngjs" : "~2.3.1"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "fileName" : "Snake",
+  
+  "dropbox-comment" : "Set to true to copy the built files to ~/Dropbox/GB/[fileName]/",
+  "dropbox" : false
+}

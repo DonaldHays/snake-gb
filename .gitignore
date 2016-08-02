@@ -1,0 +1,4 @@
+node_modules
+img/*.asm
+builder/bin
+build
