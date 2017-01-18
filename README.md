@@ -1,5 +1,7 @@
 # Snake for Game Boy
 
+A version of Snake programmed for the Game Boy. Binary download and browser-playable version available [on my website](http://donaldhays.com/projects/snake/).
+
 ## Building
 
 I built this project on macOS. The instructions should be pretty easy to follow from most UNIX-y operating systems. Windows users may have some troubles with the build scripts.
