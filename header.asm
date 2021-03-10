@@ -82,7 +82,7 @@ SECTION "Old Licensee Code", ROM0[$14B]
   DB $33
 
 SECTION "ROM Version", ROM0[$14C]
-  DB $01
+  DB $02
 
 SECTION "Header Checksum", ROM0[$14D]
   DB $00
