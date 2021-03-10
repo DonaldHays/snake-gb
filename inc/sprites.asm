@@ -1,7 +1,7 @@
 IF !DEF(SPRITES_INC)
 SPRITES_INC SET 1
 
-SECTION "Sprites", HOME
+SECTION "Sprites", ROM0
 
 ; Sprite OAM exists at gb_ram_obj. There are 40 sprites. Each sprite has 4 bytes
 ; of data.

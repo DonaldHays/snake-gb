@@ -19,7 +19,7 @@ sram_enable_reg EQU $0000
 sram_bank_number_reg EQU $4000
 rom_sram_mode_reg EQU $6000
 
-SECTION "Save", HOME
+SECTION "Save", ROM0
 magicData:
   db "save"
 

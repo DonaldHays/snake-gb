@@ -5,10 +5,10 @@ include "img/tiles_font.asm"
 include "inc/memory.asm"
 include "inc/shift.asm"
 
-SECTION "Strings Variables", BSS
-loadedFontMapRAMIndex DS 1
+SECTION "Strings Variables", WRAM0
+loadedFontMapRAMIndex: DS 1
 
-SECTION "Strings", HOME
+SECTION "Strings", ROM0
 
 ; func initializeFont(b=offset)
 initializeFont:

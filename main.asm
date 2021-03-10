@@ -3,10 +3,10 @@ INCLUDE "title.asm"
 INCLUDE "field.asm"
 INCLUDE "inc/save.asm"
 
-SECTION "Global Flags", BSS
-vblankFlag DS 1
+SECTION "Global Flags", WRAM0
+vblankFlag: DS 1
 
-SECTION "Main", HOME[$150]
+SECTION "Main", ROM0[$150]
 main:
   ld sp, $FFFE        ; Set stack pointer to high RAM
   call saveInit

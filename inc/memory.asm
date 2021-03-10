@@ -1,7 +1,7 @@
 IF !DEF(MEMORY_INC)
 MEMORY_INC SET 1
 
-SECTION "Memory", HOME
+SECTION "Memory", ROM0
 
 ; func memcpy(de=destinationAddress, hl=sourceAddress, bc=length)
 ; Copies `bc` bytes from `hl` to `de`

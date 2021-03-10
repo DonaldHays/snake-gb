@@ -6,7 +6,7 @@ INCLUDE "inc/rand.asm"
 INCLUDE "inc/debug.asm"
 INCLUDE "inc/save.asm"
 
-SECTION "Field Module Variables", BSS
+SECTION "Field Module Variables", WRAM0
 FIELD_MODULE_SNAKE_SLOT_COUNT EQU 18*14
 FIELD_MODULE_SNAKE_TICK_TIME EQU 16
 FIELD_MODULE_FOOD_PER_TICK_INCREASE EQU 15
@@ -23,51 +23,51 @@ FIELD_MODULE_FONT_DATA_OFFSET EQU 40
 FIELD_MODULE_HEART_SPAWN_COUNT EQU 10
 FIELD_MODULE_HEART_DURATION_SECONDS EQU 9
 
-fieldModuleTickTime DS 1
-fieldModuleFoodUntilTickTimeIncrease DS 1
+fieldModuleTickTime: DS 1
+fieldModuleFoodUntilTickTimeIncrease: DS 1
 
-fieldModuleHeartSpawnCountdown DS 1
-fieldModuleFoodIsHeart DS 1
+fieldModuleHeartSpawnCountdown: DS 1
+fieldModuleFoodIsHeart: DS 1
 
-fieldModuleSnakeLength DS 1
-fieldModuleSnakeSlots DS FIELD_MODULE_SNAKE_SLOT_COUNT * 2
-fieldModuleSnakeSlotHead DS 1
-fieldModuleSnakeSlotTail DS 1
-fieldModuleSnakeTickTime DS 1
-fieldModuleSnakeNextDirection DS 1
-fieldModuleSnakePreviousDirection DS 1
-fieldModuleOccupiedFlags DS FIELD_MODULE_SNAKE_SLOT_COUNT
+fieldModuleSnakeLength: DS 1
+fieldModuleSnakeSlots: DS FIELD_MODULE_SNAKE_SLOT_COUNT * 2
+fieldModuleSnakeSlotHead: DS 1
+fieldModuleSnakeSlotTail: DS 1
+fieldModuleSnakeTickTime: DS 1
+fieldModuleSnakeNextDirection: DS 1
+fieldModuleSnakePreviousDirection: DS 1
+fieldModuleOccupiedFlags: DS FIELD_MODULE_SNAKE_SLOT_COUNT
 
-fieldModuleShouldWriteSnakeHead DS 1
-fieldModuleShouldWriteSnakeHeadX DS 1
-fieldModuleShouldWriteSnakeHeadY DS 1
+fieldModuleShouldWriteSnakeHead: DS 1
+fieldModuleShouldWriteSnakeHeadX: DS 1
+fieldModuleShouldWriteSnakeHeadY: DS 1
 
-fieldModuleShouldWriteSnakeTail DS 1
-fieldModuleShouldWriteSnakeTailX DS 1
-fieldModuleShouldWriteSnakeTailY DS 1
-fieldModuleShouldWriteSnakeTailValue DS 1
+fieldModuleShouldWriteSnakeTail: DS 1
+fieldModuleShouldWriteSnakeTailX: DS 1
+fieldModuleShouldWriteSnakeTailY: DS 1
+fieldModuleShouldWriteSnakeTailValue: DS 1
 
-fieldModuleHeadCoordinateBufferX DS 1
-fieldModuleHeadCoordinateBufferY DS 1
-fieldModuleNextDirectionBuffer DS 1
+fieldModuleHeadCoordinateBufferX: DS 1
+fieldModuleHeadCoordinateBufferY: DS 1
+fieldModuleNextDirectionBuffer: DS 1
 
-fieldModuleHeartAgeSeconds DS 1
-fieldModuleHeartAgeTicks DS 1
+fieldModuleHeartAgeSeconds: DS 1
+fieldModuleHeartAgeTicks: DS 1
 
-fieldModuleFoodX DS 1
-fieldModuleFoodY DS 1
-fieldModuleDidHideFood DS 1
-fieldModuleFoodBufferX DS 1
-fieldModuleFoodBufferY DS 1
-fieldModuleFoodTile DS 1
-fieldModuleShouldWriteFoodOAM DS 1
+fieldModuleFoodX: DS 1
+fieldModuleFoodY: DS 1
+fieldModuleDidHideFood: DS 1
+fieldModuleFoodBufferX: DS 1
+fieldModuleFoodBufferY: DS 1
+fieldModuleFoodTile: DS 1
+fieldModuleShouldWriteFoodOAM: DS 1
 
-fieldModuleReleasedPause DS 1
+fieldModuleReleasedPause: DS 1
 
-fieldModuleScore DS 2
-fieldModuleShouldRenderScore DS 1
+fieldModuleScore: DS 2
+fieldModuleShouldRenderScore: DS 1
 
-SECTION "Field Module", HOME
+SECTION "Field Module", ROM0
 fieldModuleScoreText:
   db "SCORE",0
 fieldModuleHighScoreText:

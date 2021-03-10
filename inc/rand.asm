@@ -3,10 +3,10 @@ RAND_INC SET 1
 
 INCLUDE "inc/math.asm"
 
-SECTION "Random Variables", BSS
-randomState DS 1
+SECTION "Random Variables", WRAM0
+randomState: DS 1
 
-SECTION "Random", HOME
+SECTION "Random", ROM0
 ; Seeds the random number generator based on the current value of the timer divider
 seedRandom:
   ld a, [gb_timer_divider]

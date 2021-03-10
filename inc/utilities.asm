@@ -3,7 +3,7 @@ UTILITIES_INC SET 1
 
 INCLUDE "img/tiles_gray.asm"
 
-SECTION "Utilities", HOME
+SECTION "Utilities", ROM0
 
 busyWaitForVBlank:
   ldh a, [gb_scanline_current]  ; Load the current scanline

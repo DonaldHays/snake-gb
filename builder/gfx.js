@@ -3,21 +3,9 @@
 var fs = require("fs");
 var path = require("path");
 var PNG = require("pngjs").PNG;
+const program = require("commander").program;
 
 var images = {};
-
-module.exports = function(imageDirectory, done) {
-  var sourceDirectory = path.resolve(imageDirectory, "src");
-  var fileNames = fs.readdirSync(sourceDirectory);
-  for(var i=0; i<fileNames.length; i++) {
-    var fileName = fileNames[i];
-    if(path.extname(fileName) == ".json") {
-      var filePath = path.resolve(sourceDirectory, fileName);
-      processSet(imageDirectory, filePath);
-    }
-  }
-  done();
-}
 
 function getImage(dirPath, imageName) {
   if(images[imageName] == null) {
@@ -132,7 +120,7 @@ function outputAssembly(name, indices, bytes, path) {
     output += "\n";
   }
   
-  output += "SECTION \"" + name + " tiles\", HOME\n";
+  output += "SECTION \"" + name + " tiles\", ROM0\n";
   output += name + "Tiles:\n";
   for(var i=0; i<bytes.length; i++) {
     if(i % 16 == 0) {
@@ -156,3 +144,14 @@ function outputAssembly(name, indices, bytes, path) {
   
   fs.writeFileSync(path, output);
 }
+
+program
+  .version("1.0.0")
+  .arguments("<src> <dst>")
+  .action((src, dst) => {
+    let jsonFilePath = src.substring(0, src.length - path.extname(src).length) + ".json";
+    console.log(`convert ${src} to ${dst}, ${jsonFilePath}`);
+    processSet(path.dirname(dst), jsonFilePath);
+  });
+
+  program.parse(process.argv);

@@ -1,7 +1,7 @@
 IF !DEF(MATH_INC)
 MATH_INC SET 1
 
-SECTION "Math", HOME
+SECTION "Math", ROM0
 
 ; func mul8(d, e) -> h 
 ; Multiplies d by e, storing in h

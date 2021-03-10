@@ -5,11 +5,11 @@ INCLUDE "inc/utilities.asm"
 INCLUDE "inc/palettes.asm"
 INCLUDE "inc/save.asm"
 
-SECTION "Title Module Variables", BSS
-titleModuleState DS 1
-titleModuleFadeTimer DS 1
-titleModuleFadeState DS 1
-titleModuleFadePalettes DS 4
+SECTION "Title Module Variables", WRAM0
+titleModuleState: DS 1
+titleModuleFadeTimer: DS 1
+titleModuleFadeState: DS 1
+titleModuleFadePalettes: DS 4
 
 TITLE_MODULE_STATE_FADING_IN EQU 1
 TITLE_MODULE_STATE_AWAITING_INPUT EQU 2
@@ -18,7 +18,7 @@ TITLE_MODULE_STATE_DONE EQU 4
 
 FADE_TIMER_DURATION EQU 5
 
-SECTION "Title Module", HOME
+SECTION "Title Module", ROM0
 titleText:
   db "SNAKE",0
 pressStartText:

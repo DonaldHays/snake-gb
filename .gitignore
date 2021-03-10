@@ -2,3 +2,6 @@ node_modules
 img/*.asm
 builder/bin
 build
+.DS_Store
+obj
+bin
