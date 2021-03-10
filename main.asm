@@ -8,7 +8,7 @@ vblankFlag: DS 1
 
 SECTION "Main", ROM0[$150]
 main:
-  ld sp, $FFFE        ; Set stack pointer to high RAM
+  ld sp, $E000        ; Set stack pointer to end of RAM
   call saveInit
   jp titleMain
 
