@@ -1,6 +1,7 @@
 INCLUDE "img/tiles_background.asm"
 INCLUDE "inc/math.asm"
 INCLUDE "img/tiles_food.asm"
+INCLUDE "img/tiles_title.asm"
 INCLUDE "inc/sprites.asm"
 INCLUDE "inc/rand.asm"
 INCLUDE "inc/debug.asm"
@@ -96,11 +97,11 @@ fieldMap:
   DB $08,$09,$09,$09,$09,$09,$09,$09,$09,$09,$09,$09,$09,$09,$09,$09,$09,$09,$09,$0A
 
 fieldIndexToXYTable:
-INDEX SET 0
+INDEX = 0
   REPT 18 * 14
   DB INDEX % 18
   DB INDEX / 18
-INDEX SET INDEX + 1
+INDEX = INDEX + 1
   ENDR
 
 ; =====

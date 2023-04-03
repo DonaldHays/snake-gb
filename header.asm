@@ -47,7 +47,7 @@ SECTION "Entrypoint", ROM0[$100]
   jp main
 
 SECTION "Nintendo Logo", ROM0[$104]
-  NINTENDO_LOGO ; Defined in hardware.inc
+  DS $30
 
 SECTION "Title", ROM0[$134]
   ; Title must be 11 upper-case characters. Pad with $00.
@@ -73,7 +73,7 @@ SECTION "ROM Size", ROM0[$148]
   DB BOOT_ROM_32K
 
 SECTION "RAM Size", ROM0[$149]
-  DB BOOT_RAM_2K
+  DB BOOT_RAM_8K
 
 SECTION "Destination Code", ROM0[$14A]
   DB BOOT_DEST_INTERNATIONAL
@@ -82,7 +82,7 @@ SECTION "Old Licensee Code", ROM0[$14B]
   DB $33
 
 SECTION "ROM Version", ROM0[$14C]
-  DB $02
+  DB $03
 
 SECTION "Header Checksum", ROM0[$14D]
   DB $00

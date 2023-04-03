@@ -29,6 +29,6 @@ img/tiles_%.asm: img/src/%.png img/src/%.json
 
 obj/main.o: main.asm
 	$(ensure_directory_exists)
-	rgbasm -E -M $(@:.o=.d) -o $@ $<
+	rgbasm -h -E -M $(@:.o=.d) -o $@ $<
 
 include $(wildcard obj/*.d)

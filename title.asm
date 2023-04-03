@@ -19,14 +19,10 @@ TITLE_MODULE_STATE_DONE EQU 4
 FADE_TIMER_DURATION EQU 5
 
 SECTION "Title Module", ROM0
-titleText:
-  db "SNAKE",0
 pressStartText:
   db "PRESS  START",0
 urlText:
   db "DONALDHAYS.COM",0
-twitterText:
-  db "TWITTER: @DOVURO",0
 
 titleMain:
   call seedRandom
@@ -42,22 +38,18 @@ titleMain:
   ld c, 1
   call initializeFont
   
+  call titleLoadTiles
+  
   call clearMap
   
-  ld hl, titleText
-  ld bc, (32 * 5) + 7
-  call printString
+  call titleDrawLogo
   
   ld hl, pressStartText
-  ld bc, (32 * 11) + 4
+  ld bc, (32 * 12) + 4
   call printString
   
   ld hl, urlText
-  ld bc, (32 * 15) + 3
-  call printString
-  
-  ld hl, twitterText
-  ld bc, (32 * 16) + 2
+  ld bc, (32 * 16) + 3
   call printString
   
   call initializeFadeIn
@@ -78,7 +70,6 @@ titleMain:
   call random
 
   halt
-  nop
   nop
 
   ld a, [titleModuleState]
@@ -119,6 +110,35 @@ titleUpdate:
   call initializeFadeOut
   ret
 
+titleLoadTiles:
+  ld bc, TITLE_TILES_COUNT * 16
+  ld hl, titleTiles
+  ld de, gb_ram_tile + ($40 * 16)
+  call memcpy
+  ret
+  
+titleDrawLogo:
+  ; yeah these are some pretty horribly hardcoded magic numbers, I just want to
+  ; get this title logo quickly thrown together XD
+  ld b, 7           ; logo height in tiles
+  ld c, 14          ; logo width in tiles
+  ld a, $40         ; starting vram tile index
+  ld de, 32 - 14    ; offset after each row
+  ld hl, $9843      ; start address
+.outerTitleLoop
+.titleLoop
+  ld [hli], a
+  inc a
+  dec c
+  jr nz, .titleLoop
+  
+  ld c, 14
+  add hl, de
+  dec b
+  jr nz, .outerTitleLoop
+  
+  ret
+  
 ; func initializeFadeIn()
 ; Sets up state for a fade in
 initializeFadeIn:

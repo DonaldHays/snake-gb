@@ -1,5 +1,5 @@
 IF !DEF(STRINGS_INC)
-STRINGS_INC SET 1
+STRINGS_INC = 1
 
 include "img/tiles_font.asm"
 include "inc/memory.asm"

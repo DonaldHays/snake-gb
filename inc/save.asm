@@ -1,5 +1,5 @@
 IF !DEF(SAVE_INC)
-SAVE_INC SET 1
+SAVE_INC = 1
 
 sram_root EQU $A000
 

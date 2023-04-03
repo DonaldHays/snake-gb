@@ -33,9 +33,9 @@
 ; If all of these are already defined, don't do it again.
 
         IF      !DEF(SHIFT_INC)
-SHIFT_INC  SET  1
+SHIFT_INC = 1
 
-rev_Check_shift_inc: MACRO
+MACRO rev_Check_shift_inc
 ;NOTE: REVISION NUMBER CHANGES MUST BE ADDED
 ;TO SECOND PARAMETER IN FOLLOWING LINE.
         IF      \1 > 1.2      ; <--- PUT REVISION NUMBER HERE
@@ -45,7 +45,7 @@ rev_Check_shift_inc: MACRO
 
 ; Shift: C <- 15<-0 <- 0
 
-sla16:  MACRO
+MACRO sla16
 __rp    EQUS    STRLWR("\1")
 __r1    EQUS    STRSUB("\1",1,1)
 __r2    EQUS    STRSUB("\1",2,1)
@@ -62,7 +62,7 @@ __r2    EQUS    STRSUB("\1",2,1)
 
 ; Shift: 0 -> 15->0 -> C
 
-srl16:  MACRO
+MACRO srl16
 __rp    EQUS    STRLWR("\1")
 __r1    EQUS    STRSUB("\1",1,1)
 __r2    EQUS    STRSUB("\1",2,1)
@@ -80,7 +80,7 @@ __r2    EQUS    STRSUB("\1",2,1)
 ; Rotate: +-- C <- 15<-0 <--+
 ;         +-----------------+
 
-rl16:   MACRO
+MACRO rl16
 __rp    EQUS    STRLWR("\1")
 __r1    EQUS    STRSUB("\1",1,1)
 __r2    EQUS    STRSUB("\1",2,1)
@@ -98,7 +98,7 @@ __r2    EQUS    STRSUB("\1",2,1)
 ; Rotate: +--> 15->0 -> C --+
 ;         +-----------------+
 
-rr16:   MACRO
+MACRO rr16
 __rp    EQUS    STRLWR("\1")
 __r1    EQUS    STRSUB("\1",1,1)
 __r2    EQUS    STRSUB("\1",2,1)

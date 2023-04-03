@@ -1,0 +1,8 @@
+{
+  "sources" : [
+    {
+      "image" : "title.png",
+      "autotile" : true
+    }
+  ]
+}

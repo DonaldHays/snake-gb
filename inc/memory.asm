@@ -1,5 +1,5 @@
 IF !DEF(MEMORY_INC)
-MEMORY_INC SET 1
+MEMORY_INC = 1
 
 SECTION "Memory", ROM0
 
@@ -51,7 +51,7 @@ memcmp:
 ; ld16 r1, r2
 ; Copies `r2` into `r1`
 ; - requires: `r1` and `r2` must both be one of "bc", "de", or "hl"
-ld16: MACRO
+MACRO ld16
 __a EQUS STRLWR("\1")
 __b EQUS STRLWR("\2")
 __a1 EQUS STRSUB("\1", 1, 1)

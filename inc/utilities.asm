@@ -1,5 +1,5 @@
 IF !DEF(UTILITIES_INC)
-UTILITIES_INC SET 1
+UTILITIES_INC = 1
 
 INCLUDE "img/tiles_gray.asm"
 
@@ -18,11 +18,11 @@ readJoypad:
   
   ; Read first part of joypad state
   ld a, GB_JOY_SELECT_FIRST_PART
-  ld [gb_joy_ctrl], a
+  ldh [gb_joy_ctrl], a
   
   ; Read several times to burn cycles waiting for register to update
-  ld a, [gb_joy_ctrl]
-  ld a, [gb_joy_ctrl]
+  ldh a, [gb_joy_ctrl]
+  ldh a, [gb_joy_ctrl]
   cpl ; Invert so 1=on and 0=off
   and $0f ; Only want 4 least significant bits
   swap a  ; Swap nibbles
@@ -30,15 +30,15 @@ readJoypad:
   
   ; Read second part of joypad state
   ld a, GB_JOY_SELECT_SECOND_PART
-  ld [gb_joy_ctrl], a
+  ldh [gb_joy_ctrl], a
   
   ; Read several times to burn cycles waiting for register to update
-  ld a, [gb_joy_ctrl]
-  ld a, [gb_joy_ctrl]
-  ld a, [gb_joy_ctrl]
-  ld a, [gb_joy_ctrl]
-  ld a, [gb_joy_ctrl]
-  ld a, [gb_joy_ctrl]
+  ldh a, [gb_joy_ctrl]
+  ldh a, [gb_joy_ctrl]
+  ldh a, [gb_joy_ctrl]
+  ldh a, [gb_joy_ctrl]
+  ldh a, [gb_joy_ctrl]
+  ldh a, [gb_joy_ctrl]
   cpl ; invert
   and $0f ; only 4 least significant bits
   or b ; Merge with b

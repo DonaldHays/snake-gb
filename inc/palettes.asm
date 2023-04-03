@@ -1,9 +1,9 @@
 IF !DEF(PALETTES_INC)
-PALETTES_INC SET 1
+PALETTES_INC = 1
 
 ; loadPalette rawPalette, paletteAddress
 ; - destroys a
-loadPalette: MACRO
+MACRO loadPalette
   ld a, \1
   ldh [\2], a
 ENDM
